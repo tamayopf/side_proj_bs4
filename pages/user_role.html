@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>User Roles</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+		
+        <!-- Chart.js Stylesheet  -->
+        <link href="../assets/thirdparty/chart-js/Chart.min.css" rel="stylesheet" />
+        <!-- Jquery DataTable -->
+        <link href="../assets/thirdparty/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+		<link href="../assets/thirdparty/datatables/responsive.bootstrap.min.css" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="../assets/css/custom_style.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../assets/thirdparty/font-awesome/css/font-awesome.min.css" />
+    </head>
+
+    <body>
+        <div class="d-flex" id="wrapper">
+           
+                <!--Main Content Start-->
+                <div class="container-fluid">
+                        <h4 class="mt-4">User Roles</h4>
+                        <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">User Roles</a></li>
+                            <li class="breadcrumb-item active">Level</li>
+						</ol>
+                        <div class="row m-3">
+							<div class="col">
+								<button class="btn btn-sm btn-success float-right" data-toggle="modal" data-target="#newRoleModal">New User Role</button>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 mt-3">
+								<table id="table_user_role" class="table table-hover table-striped display nowrap dt_dynamic" style="width:100%">
+									<thead>
+										<tr>
+											<th>PORTAL</th>
+											<th>USER LEVEL</th>
+											<th>REQUIRED MINIMUM CHARACTERS FOR PASSWORD</th>
+											<th>DEFAULT PAGE</th>
+											<th>STATUS</th>
+											<th class="actionHeader">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td class="actionButton">
+												<a data-toggle="tooltip" title="Edit" href="#"><i data-toggle="modal" data-target="#updateRoleModal" class="fa fa-edit"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td class="actionButton"><a data-toggle="tooltip" title="Edit" href="#"><i data-toggle="modal" data-target="#updateRoleModal" class="fa fa-edit"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+                        </div>
+										<!--Form Modal Start -->
+				<div class="modal fade" id="newRoleModal" tabindex="-1" role="dialog" aria-labelledby="newRoleModal" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered mw-100 w-75" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">New User Role</h5>
+					  </div>
+					  <div class="modal-body">
+						 <div class="container-fluid">
+							<div class="row justify-content-center">
+								<form class="col-md-12">
+									<div class="row form-group">
+										<div class="col-sm-6">
+											<label for="email">User Role<span class="requiredLabel">*</span></label>
+											<input type="text" class="form-control form-control-sm" id="email">
+										</div>
+										<div class="col-sm-6">
+											<label for="email">Portal</label>
+											<input type="text" class="form-control form-control-sm" value="Rewards" disabled>
+										</div>
+									</div>
+
+									<div class="row form-group">
+										<div class="col-sm-6">
+											<label for="email">Required Minimum Character For The Users Password</label>
+											<input type="text" class="form-control form-control-sm" id="email">
+											<span style="font-size:9px">*Default minimum value is 6 and maximum is 32 characters.</span>
+										</div>
+										<div class="col-sm-6">
+											<label for="email">Default Page</label>
+											<select class="form-control form-control-sm" disabled><option class="smselect">Home Page</option></select>
+										</div>
+									</div>
+									
+								</form>
+							</div>
+						</div>
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+						<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<!--Form Modal End-->
+
+										<!--Form Modal Start -->
+										<div class="modal fade" id="updateRoleModal" tabindex="-1" role="dialog" aria-labelledby="updateRoleModal" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-centered mw-100 w-75" role="document">
+											  <div class="modal-content">
+												<div class="modal-header">
+												  <h5 class="modal-title" id="exampleModalLabel">Update User Role</h5>
+												</div>
+												<div class="modal-body">
+												   <div class="container-fluid">
+													  <div class="row justify-content-center">
+														  <form class="row col-md-12">
+															<div class="col-md-6">
+																<div class="form-group row">
+																	<label for="email">Portal</label>
+																	<input type="text" class="form-control form-control-sm" value="Rewards" disabled>
+																</div>
+																<div class="form-group row">
+																	<label for="email">User Role<span class="requiredLabel">*</span></label>
+																	<input type="text" class="form-control form-control-sm" id="email">
+																</div>
+																<div class="form-group row">
+																	<label for="email">Required Minimum Character For The Users Password </label>
+																	<input type="text" class="form-control form-control-sm" id="email">
+																	<span style="font-size:9px">*Default minimum value is 6 and maximum is 32 characters.</span>
+																</div>
+																<div class="form-group row">
+																	<label for="email">Default Page</label>
+																	<select class="form-control form-control-sm" disabled><option class="smselect">Home Page</option></select>
+																</div>
+																<div class="form-group row">
+																	<label for="email">Status<span class="requiredLabel">*</span></label>
+																	<select class="form-control form-control-sm"><option class="smselect">Active</option></select>
+																</div>
+															</div>
+															<div class="col-md-6">
+							
+																<table id="table_update_user_role" class="table table-hover table-striped nowrap" style="width:100%">
+																	<thead>
+																		<tr>
+																			<th>MODULES</th>
+																			<th class="actionHeader">ALLOW ACCESS</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>Organization</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Line Of Business (LOB)</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Platform</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Event</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Subscriber</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Reward</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Campaign</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Advertisement</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Funding Group</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Criteria / Rule</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Loyalty Point</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																		<tr>
+																			<td>Promo Code / Voucher</td>
+																			<td class="actionButton"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+																		</tr>
+																	</tbody>
+																</table>
+								
+															</div>
+														  </form>
+													  </div>
+												  </div>
+												</div>
+												<div class="modal-footer">
+												  <button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+												  <button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+												</div>
+											  </div>
+											</div>
+										  </div>
+				
+									<!--Advance Filter Start-->
+									<div class="modal fade" id="advanceFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
+									  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+										<div class="modal-content">
+										  <div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Advance Filter</h5>
+										  </div>
+										  <div class="modal-body">
+											 <div class="container-fluid">
+												<div class="row">
+													<form class="col-12">
+													  <div class="form-group row">
+														<label for="inp_search_mng_organization" class="col-sm-2">Search</label>
+														<div class="col-sm-10">
+														  <input type="text" class="form-control form-control-sm" id="inp_search_mng_organization">
+														</div>
+													  </div>
+													  <div id="advanceFilterFields" class="form-group row">
+														
+													  </div>
+													 </form>
+												</div>
+											</div>
+										  </div>
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-primary btn-sm col-md-2">Search</button>
+											<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+										  </div>
+										</div>
+									  </div>
+									</div>
+									<!--Advance Filter End -->
+                </div>
+                <!--Main Content End-->
+				
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- JQuery / BS4 JS -->
+		<script src="../assets/thirdparty/jquery/jquery.min.js"></script>
+		<script src="../assets/css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+		<script src="../assets/thirdparty/datatables/jquery.dataTables.min.js"></script> 
+		<script src="../assets/thirdparty/datatables/dataTables.bootstrap4.min.js"></script> 
+		<script src="../assets/thirdparty/datatables/responsive.bootstrap.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/Chart.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/chart-label.js"></script>
+
+        <script src="../assets/js/custom_script.js"></script>
+    </body>
+</html>
+<script>
+	$('#table_update_user_role').DataTable( {
+		"searching": true,
+		"info":     true,
+		"paging":   true,
+		"pageLength": 5
+    });
+	
+</script>

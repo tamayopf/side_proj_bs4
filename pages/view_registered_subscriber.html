@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>View Registered Subscribers</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+		
+        <!-- Chart.js Stylesheet  -->
+        <link href="../assets/thirdparty/chart-js/Chart.min.css" rel="stylesheet" />
+        <!-- Jquery DataTable -->
+        <link href="../assets/thirdparty/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="../assets/css/custom_style.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../assets/thirdparty/font-awesome/css/font-awesome.min.css" />
+    </head>
+
+    <body>
+        <div class="d-flex" id="wrapper">
+		
+                <!--Main Content Start-->
+                <div class="container-fluid">
+                        <h4 class="mt-4">View Registered Subscribers</h4>
+                        <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Rewards Management</a></li>
+                            <li class="breadcrumb-item active">Subscribers</li>
+                        </ol>
+                        <div class="row m-3">
+							<div class="col-xl-12 col-lg-12 col-md-12">
+								<div class="card">
+									<div class="card-body">
+									<div class="row">
+                            <div class="col-xl-3 col-md-6">
+								<div class="card card-body  wellCustom" style="background-color:#003162;">
+									<div class="wellTitle">
+										<i class="fa fa-check"></i>&nbsp;Active Customers
+									</div>
+									<div class="wellContent">
+										<p>10</p>
+									</div>
+								</div>
+                            </div>
+							
+							<div class="col-xl-3 col-md-6">
+								<div class="card card-body  wellCustom" style="background-color:lightcoral;">
+									<div class="wellTitle">
+										<i class="fa fa-exclamation-circle"></i>&nbsp;Dormant Customers
+									</div>
+									<div class="wellContent">
+										<p>7</p>
+									</div>	
+								</div>
+                            </div>
+							
+							<div class="col-xl-3 col-md-6">
+								<div class="card card-body wellCustom" style="background-color:#337ab7;">
+									 <div class="wellTitle">
+										<i class="fa fa-money"></i>&nbsp;Earning Customers
+									</div>
+									<div class="wellContent">
+										<p>24</p>
+									</div>
+								</div>
+                            </div>
+							
+							<div class="col-xl-3 col-md-6">
+								<div class="card card-body  wellCustom" style="background-color:#5cb85c;">
+									  <div class="wellTitle">
+										<i class="fa fa-usd"></i>&nbsp;Redeeming Customers
+									</div>
+									<div class="wellContent">
+										<p>8</p>
+									</div>
+								</div>
+                            </div>
+							</div>
+							</div>
+							</div>
+							</div>
+                        </div>
+                        <div class="row m-3">
+							<div class="col-xl-12 col-lg-12 col-md-12">
+							<div class="card">
+									<div class="card-body">
+								<table id="table_view_registered_subscriber" class="table table-hover table-striped nowrap dt_dynamic" style="width:100%">
+									<thead>
+										<tr>
+											<th>GIGYA ID</th>
+											<th>FIRST NAME</th>
+											<th>LAST NAME</th>
+											<th>DATE REGISTERED</th>
+											<th>MOBILE</th>
+											<th>EMAIL ADDRESS</th>
+											<th>KAPAMILYA NAME</th>
+											<th class="actionHeader">ACTION</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td>09111111111</td>
+											<td>rap@rap.com</td>
+											<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test@test.com</td>
+											<td>09111111111</td>
+											<td>rap@rap.com</td>
+											<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
+								</div>
+							</div>
+                        </div>
+						
+						
+									<!--Advance Filter Start-->
+										<div class="modal fade" id="advanceFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+											<div class="modal-content">
+											  <div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Advance Filter</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												  <span aria-hidden="true">&times;</span>
+												</button>
+											  </div>
+											  <div class="modal-body">
+												 <div class="container-fluid">
+													<div class="row">
+														<form class="col-12">
+														  <div class="form-group row">
+															<label for="inp_search_mng_organization" class="col-sm-2">Search</label>
+															<div class="col-sm-10">
+															  <input type="text" class="form-control form-control-sm" id="inp_search_mng_organization">
+															</div>
+														  </div>
+														  <div id="advanceFilterFields" class="form-group row">
+															
+														  </div>
+														 </form>
+													</div>
+												</div>
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-primary btn-sm">Search</button>
+												<button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">Cancel</button>
+											  </div>
+											</div>
+										  </div>
+										</div>
+										<!--Advance Filter End -->
+                </div>
+                <!--Main Content End-->
+				
+	
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- JQuery / BS4 JS -->
+        <script src="../assets/thirdparty/jquery/jquery.min.js"></script>
+        <script src="../assets/css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/Chart.min.js"></script>
+        <script src="../assets/thirdparty/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/js/custom_script.js"></script>
+    </body>
+</html>
+<script></script>

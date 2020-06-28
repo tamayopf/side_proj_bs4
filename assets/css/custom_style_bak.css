@@ -1,0 +1,262 @@
+@font-face {
+    font-family: "Montserrat"; 
+    src:url("../fonts/Montserrat/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: "OpenSans"; 
+    src:url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+body {
+  overflow-x: hidden;
+  color: #606060;
+  font-family: 'OpenSans' !important;
+}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h3,.h4,.h5,.h6{
+	color: #606060;
+	font-family: 'Montserrat' !important;
+}
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  background-color:#003152 !important;
+    filter: brightness(120%);
+  font-family: "Montserrat";
+  font-size:15px;
+}
+#sideBarMenu a{
+	   background-color:#003152 !important;
+
+	   color:white;
+	   border-bottom: 1px solid rgba(255,255,255,.25);
+	   width:93%;
+	   margin-left: 3%;
+}
+#sideBarMenu a:hover{
+	 background-color:#003142 !important;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+  
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+#navBarExpand{
+	background-color:#003152 !important;
+	color:white;
+	filter: brightness(120%);
+}
+#navBarExpand a{
+	color:white;
+}
+
+#pieChartPos{
+	position: relative;margin-top:5%; margin-bottom:9%
+}
+#chartTotal{
+font-size:20px;
+font-weight:bold;
+position:relative;
+top:5px;
+color:#505050;
+}
+#orgInpAddressAdd:hover{
+	cursor:pointer;
+	color:red;
+}
+#expandLink{
+	color:black;
+	position:relative;
+	font-size:12px;
+	margin-top:-12px;
+}
+table.dataTable thead th, table.dataTable thead td {
+	border-bottom: none !important;
+	border-top:none !important;
+}
+
+table.dataTable.no-footer{
+	border-bottom: 1px solid #D3D3D3 !important;
+}
+form{
+	font-size:12px;
+}
+.btn-responsive {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+.form-horizontal .control-label{
+   text-align:left !important; 
+}
+.form-control:disabled, select{
+font-size:12px !important;
+}
+.requiredLabel{
+	color: #8B0000;
+}
+.lblPersonalInfo{
+font-weight: normal; 
+font-size:13px;
+font-style: italic;
+color:gray;
+}
+.valPersonalInfo{
+font-size:3vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.valOrgInfo{
+font-size:27px;
+white-space: nowrap;
+}
+.valPersonalInfoOther{
+font-size:18px;
+white-space: nowrap;
+}
+.valOrgInfoOther{
+font-size:15px;
+white-space: nowrap;
+}
+.lblHolder{
+font-weight: normal; 
+font-style: italic;
+color:gray;
+position:relative;
+margin-top:13px;
+}
+
+.equal{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 1 auto;
+}
+
+.chart-container{
+	height: 237px !important;
+	margin-top: 20px;
+	position:relative;
+}
+.chart-container-m-org{
+	height: 237px !important;
+	margin-top: 20px;
+	position:relative;
+}
+.chart-container-m-platform{
+	height: 237px !important;
+	margin-top: 20px;
+	position:relative;
+}
+
+.wellTitle{
+	position:relative;
+	bottom:10px;
+	font-size: 14px;
+	text-align:left;
+	color:white
+}
+.wellContent{
+	text-align:right;
+	font-size:21px!important; 
+	position:relative;
+	top:5px;
+}
+.wellContent p{
+	color:whitesmoke;
+}
+.wellCustom{
+	height:90px;
+}
+.table {
+	text-align: left !important;
+	font-size:12px !important;
+	color: #404040;
+}
+.panel-heading{
+	text-align:left !important;
+}
+.btn-sm{
+	font-size:12px !important;
+	font-family: 'Montserrat' !important;
+}
+.btn-warning{
+	color:white;
+}
+.btn-primary{
+	background: #2196F3;
+}
+.toolbar, .toolbar_mo, .toolbar_ph, .toolbar_vrs, .toolbar_sku, .toolbar_ach,#table_view_subscriber_points_history_toolbar{
+	background:rgba(0,0,0,.05);
+	height:55px;
+	padding-top:12px;
+	padding-right:10px;
+	border: 1px solid #dee2e6;
+	border-radius:5px;
+}
+.breadcrumb{
+	font-size:12px;
+}
+.nav-link{
+	font-size:14px;
+}
+.actionButton, .actionHeader{
+	text-align:center;
+}
+.card_100{
+	height:100%;
+}
+.col-form-label{
+	text-align:right;
+}
+#table_update_user_role_filter input{
+border: 1px solid #ced4da;
+}
+.page-link{
+	padding: .25em .50em !important;
+}
+
+#footer_{
+	 text-align:center;
+	 font-size:14px;
+}

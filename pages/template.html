@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>Manage Organization</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+		
+        <!-- Chart.js Stylesheet  -->
+        <link href="../assets/thirdparty/chart-js/Chart.min.css" rel="stylesheet" />
+        <!-- Jquery DataTable -->
+        <link href="../assets/thirdparty/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+	
+        <!-- Custom styles for this template -->
+        <link href="../assets/css/custom_style.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../assets/thirdparty/font-awesome/css/font-awesome.min.css" />
+    </head>
+
+    <body>
+        <div class="d-flex" id="wrapper">
+           
+                <!--Main Content Start-->
+                <div class="container-fluid">
+                        <h4 class="mt-4">Template</h4>
+                        <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#"></a></li>
+                            <li class="breadcrumb-item active"></li>
+                        </ol>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="card card_100">
+									<div class="card-body">
+									<form class="col-md-12">
+									  <div class="form-group row">
+										<div class="col-sm-8">
+										  <input type="text" class="form-control form-control-sm" placeholder="Template ID" id="inp_template_id">
+										</div>
+										<div class="col-sm-4">
+										  <select class="form-control" placeholder="Message Type">
+											<option disabled selected>Message Type</option>
+											<option>SMS</option>
+											<option>Email</option>
+											<option>Push Notification</option>
+										  </select>
+										</div>
+									  </div>
+									  <div class="form-group row">
+										<div class="col-sm-12">
+										  <input type="text" class="form-control form-control-sm" id="inp_template_name" placeholder="Template Name">
+										</div>
+									  </div>				
+									  <div class="form-group row">
+										<div class="col-sm-12">
+										  <input type="text" class="form-control form-control-sm" id="inp_template_name" placeholder="Title">
+										</div>
+									  </div>
+									   <div class="form-group row">
+										<div class="col-sm-12">
+										   <textarea placeholder="Description" id="eventDescription" style="border: 2px solid #e9ecef; width:100%" rows="3" name="eventDescription" class="form-control form-control-sm" ></textarea>
+										</div>
+									  </div>
+									    <div class="form-group row">
+										<div class="col-sm-12">
+										<div class="input-group input-group-sm mb-3">
+										  <input type="text" class="form-control" placeholder="URL" aria-label="Recipient's username" aria-describedby="basic-addon2">
+										  <div class="input-group-append">
+											<button class="input-group-text" style="background:#337ab7;color:white">Preview</button>
+										  </div>
+										</div>
+										</div>
+									  </div>
+									  <div class="form-group row">
+										  <div class="col-sm-12">
+										   <span style="font-size:14px;font-style:italic">Parameters</span>
+										  </div>
+									  </div>
+									   <div class="form-group row">
+										  <div class="col-sm-12">
+										   <table id="table_template" class="table table-hover table-striped nowrap" style="width:100%">
+											<thead>
+												<tr>
+													<th>Parameter Name</th>
+													<th>Parameter Type</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>first_name</td>
+													<td>String</td>
+												</tr>
+												<tr>
+													<td>last_name</td>
+													<td>String</td>
+												</tr>
+												<tr>
+													<td>trans_amount</td>
+													<td>Money</td>
+												</tr>
+											</tbody>
+										   </table>
+										  </div>
+									  </div>
+									  <div class="form-group row float-right">
+										  <div class="col-sm-12">
+											
+										   <button type="button" class="btn" style="background:#337ab7;color:white">Save</button>
+										
+										  </div>
+									  </div>
+								</form>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+							
+							<table id="table_template" class="table table-hover table-striped nowrap" style="width:100%">
+									<thead>
+										<tr>
+											<th>Template ID</th>
+											<th>Template Name</th>
+											<th>Title</th>
+											<th>Message Body</th>
+											<th>Template URL</th>
+											<th>Type</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td>rap@rap.com</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test@test.com</td>
+											<td>rap@rap.com</td>
+										</tr>
+											<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td>rap@rap.com</td>
+										</tr>
+									<tr>
+											<td>2</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test@test.com</td>
+											<td>rap@rap.com</td>
+										</tr>
+											<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td>rap@rap.com</td>
+										</tr>	<tr>
+											<td>2</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test@test.com</td>
+											<td>rap@rap.com</td>
+										</tr>
+											<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td>rap@rap.com</td>
+										</tr>	<tr>
+											<td>2</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test@test.com</td>
+											<td>rap@rap.com</td>
+										</tr>
+											<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td>rap@rap.com</td>
+										</tr>	
+									</tbody>
+								</table>
+							
+							</div>
+						</div>
+                </div>
+                <!--Main Content End-->
+				
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- JQuery / BS4 JS -->
+        <script src="../assets/thirdparty/jquery/jquery.min.js"></script>
+        <script src="../assets/css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/Chart.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/chart-label.js"></script>
+        <script src="../assets/thirdparty/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/js/custom_script.js"></script>
+    </body>
+</html>
+<script></script>

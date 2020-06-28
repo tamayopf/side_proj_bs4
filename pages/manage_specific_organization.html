@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Manage Specific Organization</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/css/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js Stylesheet  -->
+  <link href="../assets/thirdparty/chart-js/Chart.min.css" rel="stylesheet">
+  <!-- Jquery DataTable -->
+  <link href="../assets/thirdparty/datatables/jquery.dataTables.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../assets/css/custom_style.css" rel="stylesheet">
+   <!-- Font Awesome -->
+  <link rel="stylesheet" href="../assets/thirdparty/font-awesome/css/font-awesome.min.css" />
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+	  <!--Main Content Start-->
+      <div class="container-fluid"> 
+						<h4 class="mt-4">Manage Specific Organization</h4>
+                        <ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#">Rewards Management</a></li>
+								<li class="breadcrumb-item"><a href="#">Organizations</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Upay Digital Technologies Inc</li>
+                        </ol>
+                        <div class="row m-3">
+							<div class="col-md-12 col-lg-12">
+								<ul class="nav nav-tabs" id="myTab" role="tablist">
+								  <li class="nav-item">
+									<a class="nav-link active" id="org-info-tab" data-toggle="tab" href="#org-info" role="tab" aria-controls="org-info" aria-selected="true">Org Info</a>
+								  </li>
+								  <li class="nav-item">
+									<a class="nav-link" id="transaction-history-tab" data-toggle="tab" href="#transaction-history" role="tab" aria-controls="points-history" aria-selected="false">Points History</a>
+								  </li>
+								  <li class="nav-item">
+									<a class="nav-link" id="account-history-tab" data-toggle="tab" href="#account-history" role="tab" aria-controls="account-history" aria-selected="false">Account History</a>
+								  </li>
+								</ul>
+								
+								
+								
+								<div class="tab-content" id="myTabContent">
+								  <div class="tab-pane fade show active" id="org-info" role="tabpanel" aria-labelledby="org-info-tab">
+									<div class="row m-2 mt-3">
+											<div class="col-lg-8">
+												<div class="card card_100">
+												  <div class="card-body">
+												  <span class="float-right"><a href="#" style="color:gray"><i class="fa fa-edit"></i></a></span>
+													<div class="container">
+														<div class="row">
+																
+																
+																<div class="form-group col-xs-9 col-md-9">
+																	<label class="lblHolder"></label>
+																	<p id="holder_orgName" class="valOrgInfo"></b>UPay Digital Technologies Inc (UP01)</b></p>
+																</div>
+																<div class="form-group col-xs-12 col-md-12" style="margin-top:-30px;">
+																	<label class="lblPersonalInfo" style="font-size:15px !important">Contact Person: <span id="holder_ContactPerson">Paolo G. Saycon / psg@email.com</span></label>
+																</div>
+																<div class="form-group col-xs-9 col-md-9" style="margin-top:-10px;">
+																	<label class="lblPersonalInfo">Address</label>
+																	<p id="holder_OrgAddress" class="valOrgInfoOther">Unit 11F, 11th Floor, Marco Polo bldg. Saphire Rd. Ortigas Pasig</p>
+																</div>
+															
+														</div>
+														<div class="row flex-row-reverse mt-2 justify-content-center" style="position:relative;top:20px;">
+															<div class="form-group col-xs-3 col-md-3 ml-n4">
+																<button id="btn_lob_deactivate" type="button" class="btn btn-danger btn-sm btn-block">Deactivate</button>
+															</div>
+															<div class="form-group col-xs-3 col-md-3 ml-n4">
+																<button id="btn_lob_addfunds" type="button" class="btn btn-primary btn-sm btn-block">Add Funds</button>
+															</div>
+															<div class="form-group col-xs-5 col-md-5">
+																<button id="btn_lob_apprej_reg" type="button" class="btn btn-success btn-sm btn-block" data-toggle="modal" data-target="#approve_reject_modal">Approve / Reject Registration</button>
+															</div>
+														</div>
+													</div>
+												  </div>
+												</div>
+											</div>
+											<div class="col-lg-4 col-md-4">
+												<div class="card card_100">
+													  <div class="card-body">
+															<div class="chart-container-m-org mt-n3">
+																<canvas id="myChart"></canvas>
+															</div>
+															<div class="row justify-content-center mb-n3">
+																<span id="chartTotal">100.00</span>
+															</div>
+													  </div>
+												 </div>
+											</div>
+									</div>
+									
+									<div class="row m-2 mt-3">
+										<div class="col-lg-12">
+											<div class="card">
+												<div class="card-body">
+															<div class="card-title">
+															<span class="h6">Line of Business (LOB)</span><button  id="btn_org_newlob" type="button" class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#newLOBModal">New LOB</button>
+															</div><hr/>
+															<table id="table_manage_specific_org" class="table table-hover table-striped dt_dynamic">
+																<thead>
+																	<tr>
+																		<th>LOB CODE</th>
+																		<th>NAME</th>
+																		<th>DATE REGISTERED</th>
+																		<th>CONTACT PERSON</th>
+																		<th>EMAIL ADDRESS</th>
+																		<th class="actionHeader">ACTION</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Timothy Mooney</td>
+																		<td>Office Manager</td>
+																		<td>London</td>
+																		<td>37</td>
+																		<td>2008/12/11</td>
+																		<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Jackson Bradshaw</td>
+																		<td>Director</td>
+																		<td>New York</td>
+																		<td>65</td>
+																		<td>2008/09/26</td>
+																		<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Olivia Liang</td>
+																		<td>Support Engineer</td>
+																		<td>Singapore</td>
+																		<td>64</td>
+																		<td>2011/02/03</td>
+																		<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Bruno Nash</td>
+																		<td>Software Engineer</td>
+																		<td>London</td>
+																		<td>38</td>
+																		<td>2011/05/03</td>
+																		<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Sakura Yamamoto</td>
+																		<td>Support Engineer</td>
+																		<td>Tokyo</td>
+																		<td>37</td>
+																		<td>2009/08/19</td>
+																		<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Michael Bruce</td>
+																		<td>Javascript Developer</td>
+																		<td>Singapore</td>
+																		<td>29</td>
+																		<td>2011/06/27</td>
+																		<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+																	</tr>
+																	<tr>
+																		<td>Donna Snider</td>
+																		<td>Customer Support</td>
+																		<td>New York</td>
+																		<td>27</td>
+																		<td>2011/01/25</td>
+																		<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+																	</tr>
+																</tbody>
+															</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--Form Modal Start -->
+										<div class="modal fade" id="newLOBModal" tabindex="-1" role="dialog" aria-labelledby="newLOBModal" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+											<div class="modal-content">
+											  <div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">New LOB</h5>
+											  </div>
+											  <div class="modal-body">
+												 <div class="container-fluid">
+													<div class="row justify-content-center">
+														<form class="col-12 mt-3">
+														   <div class="form-group row">
+															<label for="inp_lobCode" class="col-sm-3 col-form-label">LOB Code</label>
+															<div class="col-sm-8">
+															  <input type="text" class="form-control form-control-sm" id="inp_lobCode" value="LOB101">
+															</div>
+														  </div>
+														  <div class="form-group row">
+															<label for="inp_lobName" class="col-sm-3 col-form-label">LOB Name</label>
+															<div class="col-sm-8">
+															  <input type="text" class="form-control form-control-sm" id="inp_lobName">
+															</div>
+														  </div>
+														  <div class="form-group row">
+															<label for="inp_lobName" class="col-sm-3 col-form-label">CONTACT PERSON</label><br/>
+															<div class="col-sm-12">
+															<div class="form-group row">
+																<label for="inp_lobContactPersonLastName" class="col-sm-3 col-form-label">Last Name</label>
+																<div class="col-sm-8">
+																  <input type="text" class="form-control form-control-sm" id="np_lobContactPersonLastName">
+																</div>
+															  </div>
+															  <div class="form-group row">
+																<label for="inp_lobContactPersonFirstName" class="col-sm-3 col-form-label">First Name</label>
+																<div class="col-sm-8">
+																  <input type="text" class="form-control form-control-sm" id="inp_lobContactPersonFirstName">
+																</div>
+															  </div>
+															   <div class="form-group row">
+																<label for="inp_lobContactPersonMiddleName" class="col-sm-3 col-form-label">Middle Name</label>
+																<div class="col-sm-8">
+																  <input type="text" class="form-control form-control-sm" id="inp_lobContactPersonMiddleName">
+																</div>
+															  </div>
+															  <div class="form-group row">
+																<label for="inp_lobContactPersonContactNum" class="col-sm-3 col-form-label">Contact Number</label>
+																<div class="col-sm-8">
+																  <input type="text" class="form-control form-control-sm" id="inp_lobContactPersonContactNum">
+																</div>
+															  </div>
+															  <div class="form-group row">
+																<label for="inp_lobContactPersonEmail" class="col-sm-3 col-form-label">Email Address</label>
+																<div class="col-sm-8">
+																  <input type="email" class="form-control form-control-sm" id="inp_lobContactPersonEmail">
+																</div>
+															  </div>
+															</div>
+														   </div>
+														</form>
+													</div>
+												</div>
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+												<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+											  </div>
+											</div>
+										  </div>
+										</div>
+										<!--Form Modal End-->
+								  </div>
+								  <div class="tab-pane fade" id="transaction-history" role="tabpanel" aria-labelledby="transaction-history-tab">
+												  <!--POINTS HISTORY-->
+								  		<div class="row m-3">
+											<div class="col-xl-12 col-lg-12 col-md-12">
+												<table id="table_view_organization_points_history" class="table table-hover table-striped nowrap dt_dynamic" style="width:100%">
+													<thead>
+														<tr>
+															<th>LOB</th>
+															<th>ACCOUNT NUMBER</th>
+															<th>TRANSACTION</th>
+															<th>TRANSACTION DATE</th>
+															<th>EARNED AMOUNT</th>
+															<th>BALANCE BEFORE</th>
+															<th>BALANCE AFTER</th>
+															<th>CAMPAIGN ID</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>rap</td>
+															<td>rap</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+															<td>09111111111</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>test</td>
+															<td>test</td>
+															<td>test</td>
+															<td>test@test.com</td>
+															<td>09111111111</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+								  </div>
+								  <div class="tab-pane fade" id="account-history" role="tabpanel" aria-labelledby="account-history-tab">
+								    <div class="row m-3">
+											<div class="col-xl-12 col-lg-12 col-md-12">
+												<table id="table_view_platform_account_history" class="table table-hover table-striped nowrap dt_dynamic" style="width:100%">
+													<thead>
+														<tr>
+															<th>DATE AND TIMESTAMP</th>
+															<th>USERNAME</th>
+															<th>USERLEVEL</th>
+															<th>IP</th>
+															<th>LOG/DETAILS</th>
+															<th>MODULE</th>
+															<th>PLATFORM VERSION</th>
+															<th>BROWSER</th>
+															<th>BROWSER VERSION</th>
+															<th>OS VERSION</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>rap</td>
+															<td>rap</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+															<td>09111111111</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>test</td>
+															<td>test</td>
+															<td>test</td>
+															<td>test@test.com</td>
+															<td>09111111111</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+								  </div>
+								</div>
+									
+							</div>
+						</div>
+						
+										<!--Advance Filter Start-->
+										<div class="modal fade" id="advanceFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+											<div class="modal-content">
+											  <div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Advance Filter</h5>
+											  </div>
+											  <div class="modal-body">
+												 <div class="container-fluid">
+													<div class="row">
+														<form class="col-12">
+														  <div class="form-group row">
+															<label for="inp_search_mng_organization" class="col-sm-2">Search</label>
+															<div class="col-sm-10">
+															  <input type="text" class="form-control form-control-sm" id="inp_search_mng_organization">
+															</div>
+														  </div>
+														  <div id="advanceFilterFields" class="form-group row">
+															
+														  </div>
+														 </form>
+													</div>
+												</div>
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-primary btn-sm col-md-2">Search</button>
+												<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+											  </div>
+											</div>
+										  </div>
+										</div>
+										<!--Advance Filter End -->
+						
+						
+										<!--Form Modal Start Approve_Reject -->
+										<div class="modal fade" id="approve_reject_modal" tabindex="-1" role="dialog" aria-labelledby="approve_reject_modal" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+											<div class="modal-content">
+											  <div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">APPROVE / REJECT</h5>
+											  </div>
+											  <div class="modal-body">
+												 <div class="container-fluid">
+													<div class="row mr-2">
+														<form class="col-12 ml-2">
+														  <div class="form-group row justify-content-center">
+															<div class="form-check-inline">
+																
+																<input type="radio" class="form-check-input" name="optradio">APPROVE REGISTRATION
+						
+															</div>
+															<div class="form-check-inline">
+															 
+																<input type="radio" class="form-check-input" name="optradio">REJECT REGISTRATION
+														
+															</div>
+														  </div><hr/>
+
+														   <div class="form-group row  justify-content-center">
+															<label for="inp_app_rej_reason" class="col-sm-2 col-form-label">REASON</label>
+															<div class="col-sm-8">
+															 <textarea id="app_rej_reason_frm" style="border: 1px solid #e9ecef; width:100%" rows="5" class="form-control form-control-sm" >
+															</textarea>
+															</div>
+														   </div>
+														</form>
+													</div>
+												</div>
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+												<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+											  </div>
+											</div>
+										  </div>
+										</div>
+										<!--Form Modal End-->
+      </div>
+	  <!--Main Content End-->
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- JQuery / BS4 JS -->
+  <script src="../assets/thirdparty/jquery/jquery.min.js"></script>
+  <script src="../assets/css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+  <script src="../assets/thirdparty/chart-js/Chart.min.js"></script>
+  <script src="../assets/thirdparty/chart-js/chart-label.js"></script>
+  <script src="../assets/thirdparty/datatables/jquery.dataTables.min.js"></script>
+  <script src="../assets/js/custom_script.js"></script>
+</body>
+
+</html>
+<script>
+$(document).ready(function(){
+	var ctx = document.getElementById("myChart").getContext('2d');
+	var myChart = new Chart(ctx, {
+	  type: 'pie',
+	  data: {
+		labels: ["Remaining", "Expired", "Burned"],
+		datasets: [{
+		  backgroundColor: [
+			"#2ecc71",
+			"#3498db",
+			"#95a5a6"
+		  ],
+		  data: [40, 40, 20]
+		}]
+	  },
+	   options: {
+	    responsive: true,
+		maintainAspectRatio: false,
+        legend: {
+			position: 'top',
+            display: true,
+            labels: {
+				boxWidth: 20,
+                fontColor: 'rgb(255, 99, 132)',
+				fontSize:10
+            }
+        },
+		plugins:{
+			labels:{
+				render:'value',
+				fontColor: 'white',
+				fontSize: 20
+			}
+		}
+    }
+	});
+});
+</script>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>Manage Organization</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+		
+        <!-- Chart.js Stylesheet  -->
+        <link href="../assets/thirdparty/chart-js/Chart.min.css" rel="stylesheet" />
+        <!-- Jquery DataTable -->
+        <link href="../assets/thirdparty/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+	
+        <!-- Custom styles for this template -->
+        <link href="../assets/css/custom_style.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../assets/thirdparty/font-awesome/css/font-awesome.min.css" />
+		
+		<style>
+		    table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after{
+        content:" "!important;
+    }
+    table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting:before {
+        opacity: 0!important;
+    }
+    .toolbar .btn,
+    .btn-custom-primary{
+        border: 1px solid #767c8c;
+        border-radius: 3px;
+        cursor: pointer;
+        text-align: center;
+        width: -webkit-max-content;
+        width: max-content;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        text-decoration: none;
+        background: transparent;
+        color: #00113d;
+        text-transform:uppercase;
+    }
+
+    .toolbar .btn:active,
+    .toolbar .btn:focus,
+    .toolbar .btn:hover,
+    .btn-custom-primary:active,
+    .btn-custom-primary:focus,
+    .btn-custom-primary:hover,
+    .btn:active,
+    .btn:focus,
+    .btn:hover{
+        background: #00113d !important;
+        color: #fff;
+        border: 1px solid #767c8c;
+    }
+    .btn:focus,
+    .toolbar .btn:focus,
+    .btn-custom-primary:focus{
+        box-shadow: 0 0 0 0.2rem rgba(118,124,140,.5);
+    }
+    .toolbar select{
+        min-width:250px;
+    }
+   
+    .page-item.active .page-link{
+        background:#00113d;
+        border-color:#00113d;
+    }
+		</style>
+    </head>
+
+    <body>
+        <div class="d-flex" id="wrapper">
+                <!--Main Content Start-->
+                <div class="container-fluid">
+                                          <h4 class="mt-4">View Registered Subscribers</h4>
+                        <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Rewards Management</a></li>
+                            <li class="breadcrumb-item active">Subscribers</li>
+                        </ol>
+                        <div class="row m-3">
+							<div class="col-xl-12 col-lg-12 col-md-12">
+								<div class="card">
+									<div class="card-body">
+									<div class="row">
+                            <div class="col-xl-3 col-md-6">
+								<div class="card card-body  wellCustom" id="activeCustomerWellCustom">
+									<div class="wellTitle">
+										<i class="fa fa-check"></i>&nbsp;Active Customers
+									</div>
+									<div class="wellContent">
+										<p>10</p>
+									</div>
+								</div>
+                            </div>
+							
+							<div class="col-xl-3 col-md-6">
+								<div class="card card-body  wellCustom" id="dormantCustomerWellCustom">
+									<div class="wellTitle">
+										<i class="fa fa-exclamation-circle"></i>&nbsp;Dormant Customers
+									</div>
+									<div class="wellContent">
+										<p>7</p>
+									</div>	
+								</div>
+                            </div>
+							
+							<div class="col-xl-3 col-md-6">
+								<div class="card card-body wellCustom"  id="earningCustomerWellCustom">
+									 <div class="wellTitle">
+										<i class="fa fa-money"></i>&nbsp;Earning Customers
+									</div>
+									<div class="wellContent">
+										<p>24</p>
+									</div>
+								</div>
+                            </div>
+							
+							<div class="col-xl-3 col-md-6">
+								<div class="card card-body  wellCustom"  id="redeemingCustomerWellCustom">
+									  <div class="wellTitle">
+										<i class="fa fa-usd"></i>&nbsp;Redeeming Customers
+									</div>
+									<div class="wellContent">
+										<p>8</p>
+									</div>
+								</div>
+                            </div>
+							</div>
+							</div>
+							</div>
+							</div>
+                        </div>
+                        <div class="row m-3">
+							<div class="col-xl-12 col-lg-12 col-md-12">
+							<div class="card">
+									<div class="card-body">
+								<table id="table_view_registered_subscriber" class="table table-hover table-striped nowrap dt_dynamic" style="width:100%">
+									<thead>
+										<tr>
+											<th>GIGYA ID</th>
+											<th>FIRST NAME</th>
+											<th>LAST NAME</th>
+											<th>DATE REGISTERED</th>
+											<th>MOBILE</th>
+											<th>EMAIL ADDRESS</th>
+											<th>KAPAMILYA NAME</th>
+											<th class="actionHeader">ACTION</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td>09111111111</td>
+											<td>rap@rap.com</td>
+											<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test@test.com</td>
+											<td>09111111111</td>
+											<td>rap@rap.com</td>
+											<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
+								</div>
+							</div>
+                        </div>
+						
+						
+									<!--Advance Filter Start-->
+										<div class="modal fade" id="advanceFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+											<div class="modal-content">
+											  <div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Advance Filter</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												  <span aria-hidden="true">&times;</span>
+												</button>
+											  </div>
+											  <div class="modal-body">
+												 <div class="container-fluid">
+													<div class="row">
+														<form class="col-12">
+														  <div class="form-group row">
+															<label for="inp_search_mng_organization" class="col-sm-2">Search</label>
+															<div class="col-sm-10">
+															  <input type="text" class="form-control form-control-sm" id="inp_search_mng_organization">
+															</div>
+														  </div>
+														  <div id="advanceFilterFields" class="form-group row">
+															
+														  </div>
+														 </form>
+													</div>
+												</div>
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-primary btn-sm">Search</button>
+												<button type="button" class="btn btn-warning btn-sm" data-dismiss="modal">Cancel</button>
+											  </div>
+											</div>
+										  </div>
+										</div>
+                </div>
+                <!--Main Content End-->
+					<div class="fixed-bottom" style="z-index:-1;background-color:#D3D3D3">
+						<footer style="margin-left:13%;" id="footer_">
+							©Copyright 2020 All Rights Reserved.
+						</footer>
+					</div>
+				
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- JQuery / BS4 JS -->
+        <script src="../assets/thirdparty/jquery/jquery.min.js"></script>
+        <script src="../assets/css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/Chart.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/chart-label.js"></script>
+        <script src="../assets/thirdparty/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/js/custom_script.js"></script>
+    </body>
+</html>
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+	  if($("#wrapper").hasClass("toggled")){
+	  $("#footer_").removeAttr("style");
+	  }else{
+	  $("#footer_").css("margin-left", "13%")
+	  }
+    });
+  </script>

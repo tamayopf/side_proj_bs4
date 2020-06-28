@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>User Account</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+		
+        <!-- Chart.js Stylesheet  -->
+        <link href="../assets/thirdparty/chart-js/Chart.min.css" rel="stylesheet" />
+        <!-- Jquery DataTable -->
+        <link href="../assets/thirdparty/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+		<link href="../assets/thirdparty/datatables/responsive.bootsrap.min.css" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="../assets/css/custom_style.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../assets/thirdparty/font-awesome/css/font-awesome.min.css" />
+		<!-- summernote -->
+		<link href="../assets/thirdparty/summernote/summernote-bs4.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="d-flex" id="wrapper">
+           
+                <!--Main Content Start-->
+                <div class="container-fluid">
+                        <h4 class="mt-4">Email Template</h4>
+                        <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Email Template</a></li>
+                            <li class="breadcrumb-item active">Email Template</li>
+						</ol>
+                        <div class="row m-3">
+							<div class="col">
+								<button class="btn btn-sm btn-success float-right" data-toggle="modal" data-target="#newEmaiLTemplateModal">New Email Template</button>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 mt-3">
+								<table id="email_template_table" class="table table-hover table-striped nowrap dt_dynamic" style="width:100%">
+									<thead>
+										<tr>
+											<th>Template Name</th>
+											<th class="actionHeader">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td class="actionButton">
+												<a href="#"><i class="fa fa-edit"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td class="actionButton">
+												<a href="#"><i class="fa fa-edit"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+                        </div>
+										<!--Form Modal Start -->
+				<div class="modal fade" id="newEmaiLTemplateModal" tabindex="-1" role="dialog" aria-labelledby="newEmaiLTemplateModal" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered mw-100 w-75" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">New Email Template</h5>
+					  </div>
+					  <div class="modal-body">
+						 <div class="container-fluid">
+							<div class="row justify-content-center">
+								<form class="col-md-12">
+									<div class="row form-group">
+										<div class="col-sm-12">
+											<label for="email">Title<span class="requiredLabel">*</span></label>
+											<input type="text" class="form-control form-control-sm" id="email">
+										</div>
+										</div>
+										<div class="row form-group">
+										<div class="col-sm-12">
+											<label for="email">Template<span class="requiredLabel">*</span></label>
+											  <textarea id="summernote" name="editordata"></textarea>
+										</div>
+										</div>
+								</form>
+							</div>
+						</div>
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-sm col-md-2">Save</button>
+						<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<!--Form Modal End-->
+				
+                </div>
+                <!--Main Content End-->
+				
+        </div>
+        <!-- /#wrapper -->
+
+           <!-- JQuery / BS4 JS -->
+        <script src="../assets/thirdparty/jquery/jquery.min.js"></script>
+		<!-- popperjs important w/summernote -->
+		<script src="../assets/thirdparty/popper-js/umd/popper.min.js"></script>
+        <script src="../assets/css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/Chart.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/chart-label.js"></script>
+		<script src="../assets/thirdparty/datatables/jquery.dataTables.min.js"></script>
+		<script src="../assets/thirdparty/datatables/responsive.bootstrap.min.js"></script>
+        <script src="../assets/js/custom_script.js"></script>
+		<!-- summernote -->
+		<script src="../assets/thirdparty/summernote/summernote-bs4.min.js"></script>
+    </body>
+</html>
+<script>
+ $('#summernote').summernote({
+  toolbar: [
+  ['style', ['style']],
+  ['font', ['bold', 'underline', 'clear']],
+  ['fontname', ['fontname']],
+  ['color', ['color']],
+  ['para', ['ul', 'ol', 'paragraph']],
+  ['table', ['table']],
+  ['insert', ['link', 'picture']],
+  ['view', ['fullscreen', 'codeview', 'help']],
+],
+    placeholder: '',
+        tabsize: 2,
+        height: 400,
+		dialogsInBody: true
+});
+</script>
+

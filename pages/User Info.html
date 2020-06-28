@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>User Info</title>
+
+      <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+		
+        <!-- Chart.js Stylesheet  -->
+        <link href="../assets/thirdparty/chart-js/Chart.min.css" rel="stylesheet" />
+        <!-- Jquery DataTable -->
+        <link href="../assets/thirdparty/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+		<link href="../assets/thirdparty/datatables/responsive.bootsrap.min.css" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="../assets/css/custom_style.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../assets/thirdparty/font-awesome/css/font-awesome.min.css" />
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+	  <!--Main Content Start-->
+      <div class="container-fluid"> 
+						<h4 class="mt-4">User Information</h4>
+                        <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">User</a></li>
+							<li class="breadcrumb-item"><a href="#">User</a></li>
+							<li class="breadcrumb-item active" aria-current="page">User</li>
+                        </ol>
+                        <div class="row m-3">
+							<div class="col-md-12 col-lg-12">
+										<div class="row m-2 mt-2">
+												<div class="col-lg-12">
+													<div class="card card_100">
+													  <div class="card-body">
+														<span class="float-right"><a href="#"  style="color:gray" id="editButton"><i class="fa fa-edit"></i></a></span>
+															<div class="row">
+															
+																	<div class="form-group col-xs-4 col-md-3 mb-n2">
+																		<label for="name" class="lblPersonalInfo">First Name</label>
+																		<p id="" class="valPersonalInfo">Juan</p>
+																	</div>
+																	<div class="form-group col-xs-4 col-md-3 mb-n2">
+																		<label class="lblPersonalInfo">Middle Name</label>
+																		<p id="" class="valPersonalInfo">F</p>
+																	</div>
+																	<div class="form-group col-xs-4 col-md-3 mb-n2">
+																		<label for="name" class="lblPersonalInfo">Last Name</label>
+																		<p id="" class="valPersonalInfo">DelaCruz</p>
+																	</div>
+																		<div class="form-group col-xs-4 col-md-3 mb-n2">
+																		
+																	</div>
+																	<div class="form-group col-xs-3 col-md-3 mb-n2">
+																		<label class="lblPersonalInfo">Username</label>
+																		<p id="" class="valPersonalInfoOther">12345</p>
+																	</div>
+																	<div class="form-group col-xs-3 col-md-3 mb-n2">
+																		<label class="lblPersonalInfo">Users Level</label>
+																		<p id="" class="valPersonalInfoOther">1234</p>
+																	</div>
+																	<div class="form-group col-xs-3 col-md-3 mb-n2">
+																		<label for="name" class="lblPersonalInfo">Employee Number</label>
+																		<p id="" class="valPersonalInfoOther">user@user3.com</p>
+																	</div>
+																	<div class="form-group col-xs-3 col-md-3 mb-n2">
+																		<label for="name" class="lblPersonalInfo">Department</label>
+																		<p id="" class="valPersonalInfoOther">09191345823</p>
+																	</div>
+																	<div class="form-group col-xs-3 col-md-3 mb-n2">
+																		<label for="name" class="lblPersonalInfo">Employment Status</label>
+																		<p id="" class="valPersonalInfoOther">user@user3.com</p>
+																	</div>
+																	<div class="form-group col-xs-3 col-md-3 mb-n2">
+																		<label for="name" class="lblPersonalInfo">Immediate Head</label>
+																		<p id="" class="valPersonalInfoOther">user@user3.com</p>
+																	</div>
+																	<div class="form-group col-xs-3 col-md-3">
+																		<label class="lblPersonalInfo">Email Address</label>
+																		<p id="" class="valPersonalInfoOther">Dela Cruz</p>
+																	</div>
+																	<div class="form-group col-xs-3 col-md-3">
+																		<label for="name" class="lblPersonalInfo">Mobile Number</label>
+																		<p id="" class="valPersonalInfoOther">Daphne Joy</p>
+																	</div>
+															
+															</div>
+															<div class="row mb-n3 justify-content-center">
+																<div class="form-group col-xs-2 col-md-2  ml-n4">
+																	<button id="lockButton" type="button" class="btn btn-danger btn-sm btn-block">Locked</button>
+																</div>
+																<div class="form-group col-xs-2 col-md-2  ml-n4">
+																	<button id="deactivateButton" type="button" class="btn btn-danger btn-sm btn-block">Deactivate</button>
+																</div>
+																<div class="form-group col-xs-2 col-md-2  ml-n4">
+																	<button id="resetPasswordButton" type="button" class="btn btn-success btn-sm btn-block">Reset Password</button>
+																</div>						
+															</div>
+												
+													  </div>
+													</div>
+												</div>
+										</div>
+											<div class="row m-2 mt-3">
+										<div class="col-lg-12">
+											<div class="card">
+												<div class="card-body">
+															<div class="card-title">
+															<span class="h6">Account History</span>
+															</div><hr/>
+													<table id="table_view_subscriber_account_history" class="table table-hover table-striped nowrap dt_dynamic" style="width:100%">
+													<thead>
+														<tr>
+															<th>DATE AND TIMESTAMP</th>
+															<th>USERNAME</th>
+															<th>USERLEVEL</th>
+															<th>IP</th>
+															<th>LOG/DETAILS</th>
+															<th>MODULE</th>
+															<th>PLATFORM VERSION</th>
+															<th>BROWSER</th>
+															<th>BROWSER VERSION</th>
+															<th>OS VERSION</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>rap</td>
+															<td>rap</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+															<td>09111111111</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>test</td>
+															<td>test</td>
+															<td>test</td>
+															<td>test@test.com</td>
+															<td>09111111111</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+															<td>rap</td>
+															<td>rap@rap.com</td>
+														</tr>
+													</tbody>
+												</table>
+												</div>
+											</div>
+										</div>
+									</div>										
+							</div>
+						</div>
+						
+						
+																<!--Form Modal Start -->
+				<div class="modal fade" id="updateUserModal" tabindex="-1" role="dialog" aria-labelledby="newUserModal" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered mw-100 w-75" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Update User Account</h5>
+					  </div>
+					  <div class="modal-body">
+						 <div class="container-fluid">
+							<div class="row justify-content-center">
+								<form class="col-md-12">
+									<div class="row form-group">
+										<div class="col-sm-4">
+											<label for="email">Username<span class="requiredLabel">*</span></label>
+											<input type="text" class="form-control form-control-sm" id="email">
+										</div>
+										<div class="col-sm-4">
+											<label for="email">Email address<span class="requiredLabel">*</span></label>
+											<input type="text" class="form-control form-control-sm" id="email">
+										</div>
+										<div class="col-sm-4">
+											<label for="email">Mobile Number<span class="requiredLabel">*</span></label>
+											<div class="input-group input-group-sm">
+												<div class="input-group-prepend">
+												  <div class="input-group-text">+63</div>
+												</div>
+												<input type="text" class="form-control form-control-sm" placeholder="9xxxxxxxxxx">
+											  </div>
+											
+										</div>
+									</div>
+
+									<div class="row form-group">
+										<div class="col-sm-4">
+											<label for="email">First Name<span class="requiredLabel">*</span></label>
+											<input type="text" class="form-control form-control-sm" id="email">
+										</div>
+										<div class="col-sm-4">
+											<label for="email">Middle Name<span class="requiredLabel">*</span></label>
+											<input type="text" class="form-control form-control-sm" id="email">
+										</div>
+										<div class="col-sm-4">
+											<label for="email">Last Name<span class="requiredLabel">*</span></label>
+											<input type="text" class="form-control form-control-sm" id="email">
+										</div>
+									</div>
+									 
+									<div class="row form-group">
+										<div class="col-sm-4">
+											<label for="email">Portal</label>
+											<input type="text" class="form-control form-control-sm" value="Rewards" disabled>
+										</div>
+										<div class="col-sm-4">
+											<label for="email">Users Level<span class="requiredLabel">*</span></label>
+											<select class="form-control form-control-sm" ><option class="smselect">Please Select User Level</option></select>
+										</div>
+										<div class="col-sm-4">
+											<label for="email">Department<span class="requiredLabel">*</span></label>
+											<select class="form-control form-control-sm" ><option class="smselect">Please Select Department</option></select>
+										</div>
+									</div>
+
+									<div class="row form-group">
+										<div class="col-sm-4">
+											<label for="email">Employment Status<span class="requiredLabel">*</span></label>
+											<select class="form-control form-control-sm" ><option class="smselect">Please Select Employment Status</option></select>
+										</div>
+										<div class="col-sm-4">
+											<label for="email">Employee Number<span class="requiredLabel">*</span></label>
+											<input type="text" class="form-control form-control-sm" id="email">
+										</div>
+										<div class="col-sm-4">
+											<label for="email">Immediate Head<span class="requiredLabel">*</span></label>
+											<select class="form-control form-control-sm" ><option class="smselect">Please Select Immediate Head</option></select>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+						<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<!--Form Modal End-->
+										<!--Form Modal Start -->
+										<div class="modal fade" id="newAdjustmentEntry" tabindex="-1" role="dialog" aria-labelledby="newAdjustmentEntry" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+											<div class="modal-content">
+											  <div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">New Adjustment Entry</h5>
+											  </div>
+											  <div class="modal-body">
+												 <div class="container-fluid">
+													<div class="row justify-content-center">
+														<form class="col-12 mt-3">
+														   <div class="form-group row">
+															<label for="inp_lobCode" class="col-sm-3 col-form-label">Amount</label>
+															<div class="col-sm-8">
+															  <input type="text" class="form-control form-control-sm" id="">
+															</div>
+														  </div>
+														  <div class="form-group row">
+															<label for="inp_lobName" class="col-sm-3 col-form-label">Reference</label>
+															<div class="col-sm-8">
+															  <input type="text" class="form-control form-control-sm" id="">
+															</div>
+														  </div>
+														  	  <div class="form-group row">
+															<label for="inp_lobName" class="col-sm-3 col-form-label">Description</label>
+															<div class="col-sm-8">
+															  <textarea id="eventDescription" style="border: 1px solid #ced4da; width:100%" rows="5" name="eventDescription" class="form-control form-control-sm" ></textarea>
+															</div>
+														  </div>
+														  	  <div class="form-group row">
+															<label for="inp_lobName" class="col-sm-3 col-form-label">Debit | Credit</label>
+															<div class="col-sm-8">
+															  <select class="form-control form-control-sm"><option></option></select>
+															</div>
+														  </div>
+														</form>
+													</div>
+												</div>
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+												<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+											  </div>
+											</div>
+										  </div>
+										</div>
+										<!--Form Modal End-->
+						
+						
+									<!--Advance Filter Start-->
+									<div class="modal fade" id="advanceFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
+									  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+										<div class="modal-content">
+										  <div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Advance Filter</h5>
+										  </div>
+										  <div class="modal-body">
+											 <div class="container-fluid">
+												<div class="row">
+													<form class="col-12">
+													  <div class="form-group row">
+														<label for="inp_search_mng_organization" class="col-sm-2">Search</label>
+														<div class="col-sm-10">
+														  <input type="text" class="form-control form-control-sm" id="inp_search_mng_organization">
+														</div>
+													  </div>
+													  <div id="advanceFilterFields" class="form-group row">
+														
+													  </div>
+													 </form>
+												</div>
+											</div>
+										  </div>
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-primary btn-sm col-sm-2">Search</button>
+											<button type="button" class="btn btn-warning btn-sm col-sm-2" data-dismiss="modal">Cancel</button>
+										  </div>
+										</div>
+									  </div>
+									</div>
+									<!--Advance Filter End -->
+									
+									
+									
+									<!--Form Modal Start Lock-->
+					<div class="modal fade" id="lockModal" tabindex="-1" role="dialog" aria-labelledby="lockModal" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+							</div>
+							<div class="modal-body">
+							   <div class="container-fluid">
+								  <div class="row justify-content-center">
+									  <form class="col-md-12">
+										  <div class="row form-group">
+											  <div class="col-sm-12">
+												<p>Are you sure you want to LOCKED this account?</p>
+											  </div>
+											  <div class="col-sm-12">
+												  <label for="email">Password</label>
+												  <input type="password" class="form-control form-control-sm" id="email">
+											  </div>
+										  </div>
+									  </form>
+								  </div>
+							  </div>
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+							  <button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  <!--Form Modal End-->
+
+					  
+					<!--Form Modal Start unLock-->
+					<div class="modal fade" id="unlockModal" tabindex="-1" role="dialog" aria-labelledby="lockModal" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+							</div>
+							<div class="modal-body">
+							   <div class="container-fluid">
+								  <div class="row justify-content-center">
+									  <form class="col-md-12">
+										  <div class="row form-group">
+											  <div class="col-sm-12">
+												<p>Are you sure you want to UNLOCKED this account?</p>
+											  </div>
+											  <div class="col-sm-12">
+												  <label for="email">Password</label>
+												  <input type="password" class="form-control form-control-sm" id="email">
+											  </div>
+										  </div>
+									  </form>
+								  </div>
+							  </div>
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+							  <button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  <!--Form Modal End-->
+
+					  <!--Form Modal Start deactivate-->
+					<div class="modal fade" id="deactivateModal" tabindex="-1" role="dialog" aria-labelledby="lockModal" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+							</div>
+							<div class="modal-body">
+							   <div class="container-fluid">
+								  <div class="row justify-content-center">
+									  <form class="col-md-12">
+										  <div class="row form-group">
+											  <div class="col-sm-12">
+												<p>Are you sure you want to DEACTIVATE this account?</p>
+											  </div>
+											  <div class="col-sm-12">
+												  <label for="email">Password</label>
+												  <input type="password" class="form-control form-control-sm" id="email">
+											  </div>
+										  </div>
+									  </form>
+								  </div>
+							  </div>
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+							  <button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  <!--Form Modal End-->
+
+					  					  <!--Form Modal Start activate-->
+					<div class="modal fade" id="activateModal" tabindex="-1" role="dialog" aria-labelledby="lockModal" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+							</div>
+							<div class="modal-body">
+							   <div class="container-fluid">
+								  <div class="row justify-content-center">
+									  <form class="col-md-12">
+										  <div class="row form-group">
+											  <div class="col-sm-12">
+												<p>Are you sure you want to ACTIVATE this account?</p>
+											  </div>
+											  <div class="col-sm-12">
+												  <label for="email">Password</label>
+												  <input type="password" class="form-control form-control-sm" id="email">
+											  </div>
+										  </div>
+									  </form>
+								  </div>
+							  </div>
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+							  <button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  <!--Form Modal End-->
+
+					  <!--Form Modal Start activate-->
+					<div class="modal fade" id="resetPasswordModal" tabindex="-1" role="dialog" aria-labelledby="lockModal" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+							</div>
+							<div class="modal-body">
+							   <div class="container-fluid">
+								  <div class="row justify-content-center">
+									  <form class="col-md-12">
+										  <div class="row form-group">
+											  <div class="col-sm-12">
+												<p>Are you sure you want to RESET PASSWORD this account?</p>
+											  </div>
+											  <div class="col-sm-12">
+												  <label for="email">Password</label>
+												  <input type="password" class="form-control form-control-sm" id="email">
+											  </div>
+										  </div>
+									  </form>
+								  </div>
+							  </div>
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+							  <button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  <!--Form Modal End-->
+      </div>
+	  <!--Main Content End-->
+	  
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- JQuery / BS4 JS -->
+        <script src="../assets/thirdparty/jquery/jquery.min.js"></script>
+        <script src="../assets/css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/Chart.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/chart-label.js"></script>
+		<script src="../assets/thirdparty/datatables/jquery.dataTables.min.js"></script>
+		<script src="../assets/thirdparty/datatables/responsive.bootstrap.min.js"></script>
+        <script src="../assets/js/custom_script.js"></script>
+</body>
+
+</html>
+<script>
+$(document).ready(function(){
+		$('#lockButton').on('click', function(){
+			$("#lockModal").modal('show');
+		});
+		$('#unlockButton').on('click', function(){
+			$("#unlockModal").modal('show');
+		});
+		$('#deactivateButton').on('click', function(){
+			$("#deactivateModal").modal('show');
+		});
+		$('#activateButton').on('click', function(){
+			$("#activateModal").modal('show');
+		});
+		$('#suspendButton').on('click', function(){
+			$("#suspendModal").modal('show');
+		});
+		$('#resetPasswordButton').on('click', function(){
+			$("#resetPasswordModal").modal('show');
+		});
+		$('#editButton').on('click', function(){
+			$("#updateUserModal").modal('show');
+		});
+	});
+</script>

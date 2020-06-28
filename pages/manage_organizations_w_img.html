@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>Manage Organization</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+		
+        <!-- Chart.js Stylesheet  -->
+        <link href="../assets/thirdparty/chart-js/Chart.min.css" rel="stylesheet" />
+        <!-- Jquery DataTable -->
+        <link href="../assets/thirdparty/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+	
+        <!-- Custom styles for this template -->
+        <link href="../assets/css/custom_style.css" rel="stylesheet" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../assets/thirdparty/font-awesome/css/font-awesome.min.css" />
+		<style>
+    table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after{
+        content:" "!important;
+    }
+    table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting:before {
+        opacity: 0!important;
+    }
+    .toolbar .btn,
+    .btn-custom-primary{
+        border: 1px solid #767c8c;
+        border-radius: 3px;
+        cursor: pointer;
+        text-align: center;
+        width: -webkit-max-content;
+        width: max-content;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        text-decoration: none;
+        background: transparent;
+        color: #00113d;
+        text-transform:uppercase;
+    }
+
+    .toolbar .btn:active,
+    .toolbar .btn:focus,
+    .toolbar .btn:hover,
+    .btn-custom-primary:active,
+    .btn-custom-primary:focus,
+    .btn-custom-primary:hover,
+    .btn:active,
+    .btn:focus,
+    .btn:hover{
+        background: #00113d !important;
+        color: #fff;
+        border: 1px solid #767c8c;
+    }
+    .btn:focus,
+    .toolbar .btn:focus,
+    .btn-custom-primary:focus{
+        box-shadow: 0 0 0 0.2rem rgba(118,124,140,.5);
+    }
+    .toolbar select{
+        min-width:250px;
+    }
+    .page-item.active .page-link{
+        background:#00113d;
+        border-color:#00113d;
+    }
+</style>
+    </head>
+
+    <body>
+        <div class="d-flex" id="wrapper">
+	
+                <!--Main Content Start-->
+                <div class="container-fluid">
+                         <h4 class="mt-4">Manage Organizations</h4>
+                        <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Rewards Management</a></li>
+                            <li class="breadcrumb-item active">Organizations</li>
+                        </ol>
+						<div class="row m-3">
+							<div class="col-xl-12 col-lg-12 col-md-12">
+								<div class="card">
+									<div class="card-body">
+									<div class="row">
+										       <div class="col-xl-3 col-md-3 col-sm-3">
+								<div class="card card-body wellCustom" id="totalOrgWellCustom">
+									<div class="wellTitle">
+										<i class="fa fa-check"></i>&nbsp;Total Organization
+									</div>
+									<div class="wellContent">
+										<p>10</p>
+									</div>
+								</div>
+								 <div class="card-frame"></div>
+
+                            </div>
+							
+							<div class="col-xl-3 col-md-3 col-sm-3">
+								<div class="card card-body wellCustom" id="activeOrgWellCustom">
+									<div class="wellTitle">
+										<i class="fa fa-exclamation-circle"></i>&nbsp;Active Organizations
+									</div>
+									<div class="wellContent">
+										<p>7</p>
+									</div>	
+								</div>
+								 <div class="card-frame"></div>
+
+                            </div>
+							
+							<div class="col-xl-3 col-md-3 col-sm-3">
+								<div class="card card-body wellCustom" id="totalLobWellCustom">
+									 <div class="wellTitle">
+										<i class="fa fa-money"></i>&nbsp;Total LOBs
+									</div>
+									<div class="wellContent">
+										<p>24</p>
+									</div>
+								</div>
+								 <div class="card-frame"></div>
+
+                            </div>
+							
+							<div class="col-xl-3 col-md-3 col-sm-3">
+								<div class="card card-body wellCustom" id="activeLobWellCustom">
+									  <div class="wellTitle">
+										<i class="fa fa-usd"></i>&nbsp;Active LOBs
+									</div>
+									<div class="wellContent">
+										<p>8</p>
+									</div>
+								</div>
+								 <div class="card-frame"></div>
+                            </div>  
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+									
+									
+                        <div class="row m-3">
+							<div class="col-xl-12 col-lg-12 col-md-12">
+								<div class="card">
+									<div class="card-body">
+															<div class="card-title">
+															<span class="h6">Organization List</span><button class="btn btn-sm btn-success float-right" data-toggle="modal" data-target="#newOrgModal">New Organization</button>
+															</div><hr/>
+								<table id="table_manage_organization" class="table table-hover table-striped nowrap dt_dynamic" style="width:100%">
+									<thead>
+										<tr>
+											<th>Organization Code</th>
+											<th>Organization Name</th>
+											<th>Date Registered</th>
+											<th>Contact Person</th>
+											<th>Email Address</th>
+											<th class="actionHeader">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap</td>
+											<td>rap@rap.com</td>
+											<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test</td>
+											<td>test@test.com</td>
+											<td class="actionButton"><a href="#"><i class="fa fa-edit"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
+								</div>
+							</div>
+                        </div>
+										<!--Form Modal Start -->
+				<div class="modal fade" id="newOrgModal" tabindex="-1" role="dialog" aria-labelledby="newOrgModal" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">New Organization</h5>
+					  </div>
+					  <div class="modal-body">
+						 <div class="container-fluid">
+							<div class="row justify-content-center">
+								<form class="col-md-12">
+								  <div class="form-group row">
+									<label for="inp_organizationCode" class="col-sm-3 col-form-label">Organization Code</label>
+									<div class="col-sm-8">
+									  <input type="text" class="form-control form-control-sm" id="inp_organizationCode" value="ORG101">
+									</div>
+								  </div>
+								  <div class="form-group row">
+									<label for="inp_organizationName" class="col-sm-3 col-form-label">Organization Name</label>
+									<div class="col-sm-8">
+									  <input type="text" class="form-control form-control-sm" id="inp_organizationCode">
+									</div>
+								  </div>
+															<div class="form-group row">
+															<label for="inp_orgName" class="col-sm-3 col-form-label">CONTACT PERSON</label><br/>
+															<div class="col-sm-12">
+															<div class="form-group row">
+																<label for="inp_orgContactPersonLastName" class="col-sm-3 col-form-label">Last Name</label>
+																<div class="col-sm-8">
+																  <input type="text" class="form-control form-control-sm" id="np_orgContactPersonLastName">
+																</div>
+															  </div>
+															  <div class="form-group row">
+																<label for="inp_orgContactPersonFirstName" class="col-sm-3 col-form-label">First Name</label>
+																<div class="col-sm-8">
+																  <input type="text" class="form-control form-control-sm" id="inp_orgContactPersonFirstName">
+																</div>
+															  </div>
+															   <div class="form-group row">
+																<label for="inp_orgContactPersonMiddleName" class="col-sm-3 col-form-label">Middle Name</label>
+																<div class="col-sm-8">
+																  <input type="text" class="form-control form-control-sm" id="inp_orgContactPersonMiddleName">
+																</div>
+															  </div>
+															  <div class="form-group row">
+																<label for="inp_orgContactPersonContactNum" class="col-sm-3 col-form-label">Contact Number</label>
+																<div class="col-sm-8">
+																  <input type="text" class="form-control form-control-sm" id="inp_orgContactPersonContactNum">
+																</div>
+															  </div>
+															  <div class="form-group row">
+																<label for="inp_orgContactPersonEmail" class="col-sm-3 col-form-label">Email Address</label>
+																<div class="col-sm-8">
+																  <input type="email" class="form-control form-control-sm" id="inp_orgContactPersonEmail">
+																</div>		
+															  </div>
+															</div>
+														   </div>  
+								   <div class="form-group row" id="orgAddressInput">
+									<label for="inp_organizationName" class="col-sm-3 col-form-label">Address</label>
+									<div class="col-sm-7">
+									  <input type="text" class="form-control form-control-sm" id="inp_organizationCode">
+									</div>
+									<div class="col-sm-1 justify-content-center mt-2">
+										 <i class="fa fa-plus" id="orgInpAddressAdd"></i>
+									</div>
+								  </div>
+								</form>
+							</div>
+						</div>
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-sm col-md-2">Submit</button>
+						<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<!--Form Modal End-->
+				
+									<!--Advance Filter Start-->
+									<div class="modal fade" id="advanceFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
+									  <div class="modal-dialog modal-dialog-centered mw-100 w-50" role="document">
+										<div class="modal-content">
+										  <div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Advance Filter</h5>
+										  </div>
+										  <div class="modal-body">
+											 <div class="container-fluid">
+												<div class="row">
+													<form class="col-12">
+													  <div class="form-group row">
+														<label for="inp_search_mng_organization" class="col-sm-2">Search</label>
+														<div class="col-sm-10">
+														  <input type="text" class="form-control form-control-sm" id="inp_search_mng_organization">
+														</div>
+													  </div>
+													  <div id="advanceFilterFields" class="form-group row">
+														
+													  </div>
+													 </form>
+												</div>
+											</div>
+										  </div>
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-primary btn-sm col-md-2">Search</button>
+											<button type="button" class="btn btn-warning btn-sm col-md-2" data-dismiss="modal">Cancel</button>
+										  </div>
+										</div>
+									  </div>
+									</div>
+									<!--Advance Filter End -->
+                </div>
+                <!--Main Content End-->
+					<div class="fixed-bottom" style="z-index:-1;background-color:#D3D3D3">
+						<footer style="margin-left:13%;" id="footer_">
+							©Copyright 2020 All Rights Reserved.
+						</footer>
+					</div>
+
+				
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- JQuery / BS4 JS -->
+        <script src="../assets/thirdparty/jquery/jquery.min.js"></script>
+        <script src="../assets/css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/Chart.min.js"></script>
+        <script src="../assets/thirdparty/chart-js/chart-label.js"></script>
+        <script src="../assets/thirdparty/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/js/custom_script.js"></script>
+    </body>
+</html>
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+	  if($("#wrapper").hasClass("toggled")){
+	  $("#footer_").removeAttr("style");
+	  }else{
+	  $("#footer_").css("margin-left", "13%")
+	  }
+    });
+  </script>
